@@ -20,7 +20,7 @@ class RestaurantManagementSystem:
         
         #==============Title======================
         lbl_title = Label(self.root,text="MU Food Lab", font=("times new roman",40,"bold"),bg="black",fg="gold")
-        lbl_title.place(x=0,y=0,width=1340,height=50)
+        lbl_title.place(x=0,y=0,width=1525,height=50)
 
         #==============Main Frame======================
         main_frame= Frame(self.root,bd=4,relief=RIDGE)
@@ -78,19 +78,19 @@ class RestaurantManagementSystem:
 
          #==============1st Image======================
         img3 = Image.open(r"banner.jpg")
-        img3 = img3.resize((1360,600),Image.ADAPTIVE)
+        img3 = img3.resize((920,600),Image.ADAPTIVE)
         self.photoimg3 = ImageTk.PhotoImage(img3)
 
         lblimg3 = Label(main_frame,image=self.photoimg3,bd=5,relief=RIDGE)
-        lblimg3.place(x=180,y=0,width=1360,height=600)  
+        lblimg3.place(x=180,y=0,width=920,height=600)  
 
         #==============1st Image======================
         img1 = Image.open(r"offer.png")
-        img1 = img1.resize((1300,135),Image.ADAPTIVE)
+        img1 = img1.resize((1100,145),Image.ADAPTIVE)
         self.photoimg1 = ImageTk.PhotoImage(img1)
 
         lblimg = Label(self.root,image=self.photoimg1,bd=4,relief=RIDGE)
-        lblimg.place(x=0,y=520,width=1300,height=135)
+        lblimg.place(x=0,y=520,width=1100,height=145)
 
     def SetMenu_details(self):
          

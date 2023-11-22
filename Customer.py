@@ -5,87 +5,87 @@ class Customer_Info:
     def __init__(self, root):
         self.root = root
         self.root.title("Customer")
-        self.root.geometry("1090x445+190+80")
+        self.root.geometry("915x440+190+80")
 
         #==============Title======================
         lbl_title = Label(self.root, text="Customer", font=("times new roman", 16, "bold"), bg="black", fg="gold")
-        lbl_title.place(x=0, y=0, width=1090, height=30)
+        lbl_title.place(x=0, y=0, width=915, height=30)
 
         #=============Label Frame=================
         labelframeleft = LabelFrame(self.root, bd=2, relief=RIDGE, text="Customer Info",
-                                    font=("times new roman", 10, "bold"), bg="yellow", fg="Black")
-        labelframeleft.place(x=5, y=35, width=400, height=408)
+                                    font=("times new roman", 10, "bold"), bg="light grey", fg="Black")
+        labelframeleft.place(x=5, y=35, width=200, height=245)
 
         #======================polash==============
         # std name
-        lab_std_name = Label(labelframeleft, text="Name", font=("times new roman", 14, "bold"), padx=2, pady=6)
+        lab_std_name = Label(labelframeleft, text="Name", font=("times new roman", 10, "bold"), padx=2, pady=6)
         lab_std_name.grid(row=0, column=0)
-        entry_name = ttk.Entry(labelframeleft, width=22, font=("times new roman", 14, "bold"))
+        entry_name = ttk.Entry(labelframeleft, width=19, font=("times new roman", 10, "bold"))
         entry_name.grid(row=0, column=1, sticky=W)
 
         # std mobile number
-        lab_std_MN = Label(labelframeleft, text="Phone", font=("times new roman", 14, "bold"), padx=2, pady=6)
+        lab_std_MN = Label(labelframeleft, text="Phone", font=("times new roman", 10, "bold"), padx=2, pady=6)
         lab_std_MN.grid(row=1, column=0)
-        entry_MN = ttk.Entry(labelframeleft, width=22, font=("times new roman", 14, "bold"))
+        entry_MN = ttk.Entry(labelframeleft, width=19, font=("times new roman", 10, "bold"))
         entry_MN.grid(row=1, column=1, sticky=W)
 
         # std email
-        lab_std_email = Label(labelframeleft, text="Email", font=("times new roman", 14, "bold"), padx=2, pady=6)
+        lab_std_email = Label(labelframeleft, text="Email", font=("times new roman", 10, "bold"), padx=2, pady=6)
         lab_std_email.grid(row=2, column=0)
-        entry_email = ttk.Entry(labelframeleft, width=22, font=("times new roman", 14, "bold"))
+        entry_email = ttk.Entry(labelframeleft, width=19, font=("times new roman", 10, "bold"))
         entry_email.grid(row=2, column=1, sticky=W)
 
         # std ID
-        lab_std_roll = Label(labelframeleft, text="Card No", font=("times new roman", 14, "bold"), padx=2, pady=6)
+        lab_std_roll = Label(labelframeleft, text="Card No", font=("times new roman", 10, "bold"), padx=2, pady=6)
         lab_std_roll.grid(row=3, column=0)
-        entry_roll = ttk.Entry(labelframeleft, width=22, font=("times new roman", 14, "bold"))
+        entry_roll = ttk.Entry(labelframeleft, width=19, font=("times new roman", 10, "bold"))
         entry_roll.grid(row=3, column=1, sticky=W)
 
         # gender
-        lab_std_gender = Label(labelframeleft, text="Gender ", font=("times new roman", 14, "bold"), padx=2, pady=6)
+        lab_std_gender = Label(labelframeleft, text="Gender ", font=("times new roman", 10, "bold"), padx=2, pady=6)
         lab_std_gender.grid(row=5, column=0)
 
-        combo_gender = ttk.Combobox(labelframeleft, font=("arial", 12, "bold"), width=22, state="readonly")
+        combo_gender = ttk.Combobox(labelframeleft, font=("arial", 10, "bold"), width=17, state="readonly")
         combo_gender["value"] = ("Male", "Female", "Other")
         combo_gender.current(0)
         combo_gender.grid(row=5, column=1)
 
         # address
-        lab_std_address = Label(labelframeleft, text="Address", font=("times new roman", 14, "bold"), padx=2, pady=6)
+        lab_std_address = Label(labelframeleft, text="Address", font=("times new roman", 10, "bold"), padx=2, pady=6)
         lab_std_address.grid(row=6, column=0)
-        entry_ad = ttk.Entry(labelframeleft, width=22, font=("times new roman", 14, "bold"))
+        entry_ad = ttk.Entry(labelframeleft, width=19, font=("times new roman", 10, "bold"))
         entry_ad.grid(row=6, column=1, sticky=W)
 
         # buttonframe
         buttonFrame = Frame(labelframeleft, bd=2, relief=RIDGE)
-        buttonFrame.place(x=0, y=270, width=300, height=30)
+        buttonFrame.place(x=0, y=200, width=200, height=30)
         # addButton
-        button_add = Button(buttonFrame, text="Add", font=("arial", 10, "bold"), bg="black", fg="gold", width=8)
+        button_add = Button(buttonFrame, text="Add", font=("arial", 7, "bold"), bg="black", fg="gold", width=6)
         button_add.grid(row=0, column=0, padx=1)
 
         # updateButton
-        button_update = Button(buttonFrame, text="Update", font=("arial", 10, "bold"), bg="black", fg="gold", width=8)
+        button_update = Button(buttonFrame, text="Update", font=("arial", 7, "bold"), bg="black", fg="gold", width=6)
         button_update.grid(row=0, column=1, padx=1)
 
         # deleteButton
-        button_delete = Button(buttonFrame, text="Delete", font=("arial", 10, "bold"), bg="black", fg="gold", width=8)
+        button_delete = Button(buttonFrame, text="Delete", font=("arial", 7, "bold"), bg="black", fg="gold", width=6)
         button_delete.grid(row=0, column=2, padx=1)
 
         # SaveButton
-        button_save = Button(buttonFrame, text="Save", font=("arial", 10, "bold"), bg="black", fg="gold", width=8)
+        button_save = Button(buttonFrame, text="Save", font=("arial", 7, "bold"), bg="black", fg="gold", width=6)
         button_save.grid(row=0, column=3, padx=1)
 
         # right frame
         labelframeLright = LabelFrame(self.root, bd=2, relief=RIDGE, text="View details and search system",
                                       font=("times new roman", 15, "bold"), padx=2)
-        labelframeLright.place(x=410, y=30, width=865, height=490)
+        labelframeLright.place(x=210, y=30, width=865, height=490)
 
         # address
         lab_search = Label(labelframeLright, text="Search By :", font=("times new roman", 14), padx=2, pady=6,
                            bg="red", fg="white")
         lab_search.grid(row=0, column=0, padx=2)
         # combo box for search
-        combo_search = ttk.Combobox(labelframeLright, font=("arial", 12), width=15, state="readonly")
+        combo_search = ttk.Combobox(labelframeLright, font=("arial", 12), width=22, state="readonly")
         combo_search["value"] = ("Mobile Number", "Card No")
         combo_search.current(0)
         combo_search.grid(row=0, column=1, padx=2)
@@ -94,8 +94,8 @@ class Customer_Info:
         entry_ser.grid(row=0, column=2, sticky=W, padx=2)
 
         # details frame
-        details_frame = LabelFrame(labelframeLright, bd=2, font=("times new roman", 18, "bold"), padx=2)
-        details_frame.place(x=0, y=50, width=860, height=355)
+        details_frame = LabelFrame(labelframeLright, bd=2, font=("times new roman", 14, "bold"), padx=2)
+        details_frame.place(x=0, y=50, width=710, height=355)
 
         # show data table
         scroll_x = ttk.Scrollbar(details_frame, orient=HORIZONTAL)
