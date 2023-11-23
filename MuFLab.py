@@ -1,6 +1,6 @@
 from tkinter import*
 from PIL import Image, ImageTk
-from SetMenu import SetMenu_Now
+from SetMenu import SetMenu_now
 from Customer import Customer_Info
 from Salad import Salad_on
 from Platter import Platter_on
@@ -29,6 +29,10 @@ class RestaurantManagementSystem:
         #==============btn======================
         btn_frame=Frame(main_frame,bd=5,relief=RIDGE)
         btn_frame.place(x=0,y=0,width=180,height=465)
+
+        #===============reciept=============
+        re_frame=Frame(root,bd=5,relief=RIDGE)
+        re_frame.place(x=1105,y=55,width=420,height=615)
         
         #==============customer======================
         customer_btn=Button(btn_frame,text="Customer Info",command=self.customer_details,width=15,font=("times new roman",16,"bold"),bg="black",fg="gold",bd=5,cursor="hand1")
@@ -84,7 +88,7 @@ class RestaurantManagementSystem:
         lblimg3 = Label(main_frame,image=self.photoimg3,bd=5,relief=RIDGE)
         lblimg3.place(x=180,y=0,width=920,height=600)  
 
-        #==============1st Image======================
+        #==============2st Image======================
         img1 = Image.open(r"offer.png")
         img1 = img1.resize((1100,145),Image.ADAPTIVE)
         self.photoimg1 = ImageTk.PhotoImage(img1)
@@ -95,7 +99,7 @@ class RestaurantManagementSystem:
     def SetMenu_details(self):
          
         self.new_window= Toplevel(self.root)
-        self.app= SetMenu_Now(self.new_window)
+        self.app= SetMenu_now(self.new_window)
     
     def customer_details(self):
         self.new_window= Toplevel(self.root)
