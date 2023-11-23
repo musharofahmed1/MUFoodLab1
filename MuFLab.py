@@ -11,6 +11,7 @@ from Chicken import Chicken_on
 from Curry import Curry_on
 from Soup import Soup_on
 from Drinks import Drinks_on
+from Invoice import InvoiceGenerator
 
 class RestaurantManagementSystem:
     def __init__(self,root):
@@ -19,7 +20,7 @@ class RestaurantManagementSystem:
         self.root.geometry("1550x800+0+0")
         
         #==============Title======================
-        lbl_title = Label(self.root,text="MU Food Lab", font=("times new roman",40,"bold"),bg="black",fg="gold")
+        lbl_title = Label(self.root,text="Food Lab", font=("times new roman",40,"bold"),bg="black",fg="gold")
         lbl_title.place(x=0,y=0,width=1525,height=50)
 
         #==============Main Frame======================
@@ -31,7 +32,7 @@ class RestaurantManagementSystem:
         btn_frame.place(x=0,y=0,width=180,height=465)
 
         #===============reciept=============
-        re_frame=Frame(root,bd=5,relief=RIDGE)
+        re_frame=Frame(self.root,bd=5,bg="light grey",relief=RIDGE)
         re_frame.place(x=1105,y=55,width=420,height=615)
         
         #==============customer======================
@@ -79,6 +80,9 @@ class RestaurantManagementSystem:
         #==============Drinks:======================
         Contact_btn=Button(btn_frame,text="Drinks",command=self.Drinks_details,width=15,font=("times new roman",16,"bold"),bg="black",fg="gold",bd=5,cursor="hand2")
         Contact_btn.place(x=0,y=410)
+        #==============Invoice:======================
+        Contact_btn=Button(re_frame,text="Invoice",command=self.generate_invoice,width=15,font=("times new roman",16,"bold"),bg="black",fg="gold",bd=5,cursor="hand2")
+        Contact_btn.place(x=0,y=0)
 
          #==============1st Image======================
         img3 = Image.open(r"banner.jpg")
@@ -140,6 +144,11 @@ class RestaurantManagementSystem:
     def Drinks_details(self):
         self.new_window= Toplevel(self.root)
         self.app=Drinks_on(self.new_window)
+    ##=====================
+    def generate_invoice(self):
+        # Function to generate the invoice
+        self.new_window = Toplevel(self.root)
+        self.app = InvoiceGenerator(self.new_window)
 
 if __name__ == "__main__":
     root=Tk()

@@ -1,5 +1,6 @@
 from tkinter import *
 from PIL import Image, ImageTk
+from Invoice import InvoiceGenerator 
 
 class Special_on:
     def __init__(self, root):
@@ -14,6 +15,7 @@ class Special_on:
         #==============Custom Frame 1======================
         self.custom_frame1 = Frame(self.root, bg="light grey", bd=5, relief=GROOVE)
         self.custom_frame1.place(x=30, y=50, width=235, height=300)
+        self.custom_frame1.bind("<Button-1>", lambda event: self.add_to_invoice("Pizza", 550, 1))
 
         img1 = Image.open(r"pizza-bg.jpg")
         img1 = img1.resize((235, 200), Image.ADAPTIVE)
@@ -30,10 +32,10 @@ class Special_on:
         text_label2 = Label(self.custom_frame1, text="550 BDT", font=("times new roman", 15), bg="light grey")
         text_label2.pack(pady=2)
 
-        
         #==============Custom Frame 2======================
         self.custom_frame2 = Frame(self.root, bg="light grey", bd=5, relief=GROOVE)
         self.custom_frame2.place(x=310, y=50, width=235, height=300)
+        self.custom_frame2.bind("<Button-1>", lambda event: self.add_to_invoice("Focaccia", 700, 1))
 
         img2 = Image.open(r"food2.jpg")
         img2 = img2.resize((235, 200), Image.ADAPTIVE)
@@ -50,10 +52,10 @@ class Special_on:
         text_label4 = Label(self.custom_frame2, text="700 BDT", font=("times new roman", 15), bg="light grey")
         text_label4.pack(pady=2)
 
-        
         #==============Custom Frame 3======================
         self.custom_frame3 = Frame(self.root, bg="light grey", bd=5, relief=GROOVE)
         self.custom_frame3.place(x=600, y=50, width=235, height=300)
+        self.custom_frame3.bind("<Button-1>", lambda event: self.add_to_invoice("Lasagna", 800, 1))
 
         img3 = Image.open(r"dessert-bg.jpeg")
         img3 = img3.resize((235, 200), Image.ADAPTIVE)
@@ -70,15 +72,16 @@ class Special_on:
         text_label6 = Label(self.custom_frame3, text="800 BDT", font=("times new roman", 15), bg="light grey")
         text_label6.pack(pady=2)
 
-        
-
         #==============Buttons======================
-         
-        close_btn = Button(self.root, text="Close", font=("times new roman", 16), bg="blue", fg="white", command=self.root.destroy)
+        close_btn = Button(root, text="Close", font=("times new roman", 16), bg="blue", fg="white", command=self.root.destroy)
         close_btn.place(x=40, y=370, width=100, height=40)
 
-     
+    def add_to_invoice(self, item_name, item_price, item_quantity):
+        # Call the update_invoice method in Invoice.py to update the invoice details
+        self.root.update_invoice(item_name, item_price, item_quantity)
+
 if __name__ == "__main__":
     root = Tk()
     obj = Special_on(root)
+    obj_invoice = InvoiceGenerator(root)
     root.mainloop()
